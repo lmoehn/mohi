@@ -1,13 +1,13 @@
-[![Code Climate](https://codeclimate.com/github/lmoehn/mohi.png)](https://codeclimate.com/github/lmoehn/mohi)
+[![Code Climate](https://codeclimate.com/repos/5386c38f6956801fa1007c40/badges/7c2dd755dacdafd5b8b9/gpa.png)](https://codeclimate.com/repos/5386c38f6956801fa1007c40/feed)
 [![Build Status](https://travis-ci.org/lmoehn/mohi.svg?branch=4-1-stable)](https://travis-ci.org/lmoehn/mohi)
 
 
 # Monarch High School Ultimate (mohi)
-=====================================
+-------------------------------------
 
 Trying to organize, track and keep up-to-date information flowing for the 80+ students of the Monarch High
 Ultimate program is a daunting task. Getting teenagers to hand in paperwork signed by their parents, ordering
-uniforms, tracking payments and arranging carpools and making sure players are at practices and games are just a
+uniforms, tracking payments, arranging carpools and making sure players are at practices and games are just a
 few of the things the coaches and volunteers have to manage. Oh, and on top of all that, the coaches are spending
 hours of their free time teaching these kids the greatest game ever . . . ultimate frisbee!
 
@@ -15,14 +15,14 @@ hours of their free time teaching these kids the greatest game ever . . . ultima
 
 What this site hopes to do is whittle away at the most time-consuming areas of managing the team, slowly
 replacing the spreadsheets and manual processes with an easy to use, updated systems. Along the way a few
-additional 'features' might be added to service as learning tools in helping the programmer (me) develop
+additional 'features' might be added to serve as learning tools in helping the programmer (me) develop
 some real-world experience. Let the good times roll!
 
 
 ## Important Links
 
-* [Tracker](https://www.pivotaltracker.com/n/projects/1069530)
-* [Staging](http://mohi-staging.herokuapp.com)
+* [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1069530)
+* [Heroku Staging](http://mohi-staging.herokuapp.com)
 
 ## Setup
 
