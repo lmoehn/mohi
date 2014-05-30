@@ -1,0 +1,45 @@
+html, body {
+  height: 100%;
+  font-family: 'Karla', sans-serif;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+}
+
+header {
+  background-color: black;
+  overflow: hidden;
+  box-shadow: 0 0 6px 3px #006600;
+  h1 {
+    display: block;
+    float: left;
+    margin: .5em;
+    color: #FFCC00;
+  }
+}
+
+main {
+  @include outer-container;
+  margin: 0 auto;
+
+  #content-container {
+    @include span-columns(9);
+    float: left;
+  }
+  nav {
+    @include span-columns(3);
+    float: right;
+    background-color: #FFFFFF;
+  }
+}
+
+footer {
+  height: 4em;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 .5em;
+  background-image: url('grass.png');
+}

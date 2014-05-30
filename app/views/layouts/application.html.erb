@@ -2,13 +2,36 @@
 <html>
 <head>
   <title>Mohi</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
+  <link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <h1>Monarch High School Ultimate</h1>
+</header>
 
-<%= yield %>
+<main>
+
+  <nav>
+    <ul>
+      <li><%= link_to "MOHI Facebook", 'http://www.facebook.com/groups/monarchultimate' %></li>
+      <li><%= link_to "USUA website", 'http://www.usaultimate.org/index.html' %></li>
+    </ul>
+  </nav>
+
+  <div id="content-container">
+    <%= yield %>
+  </div>
+
+</main>
+
+<footer>
+
+</footer>
 
 </body>
 </html>
