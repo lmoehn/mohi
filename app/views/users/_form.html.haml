@@ -1,0 +1,52 @@
+= render 'shared/messages', target: @user
+
+%fieldset
+  = form_for @user do |f|
+    %p
+      = f.label :first_name
+      = f.text_field :first_name, placeholder: 'First Name'
+    %p
+      = f.label :last_name
+      = f.text_field :last_name
+    %p
+      = f.label :user_name
+      = f.text_field :user_name
+    %p
+      = f.label :email
+      = f.text_field :email
+    %p
+      = f.label :password
+      = f.password_field :password
+    %p
+      = f.label :user_type
+      = f.select :user_type,
+        options_for_select([['Player', 'player'],
+                            ['Parent', 'parent'],
+                            ['Coach', 'coach'],
+                            ['Other', 'other']],), prompt: 'Select User Type'
+    %p
+      = f.label :group
+      = f.password_field :group
+    %p
+      = f.label :status
+      = f.text_field :status
+    %p
+      = f.label :phone1
+      = f.telephone_field :phone1
+    %p
+      = f.label :phone1_type
+      = f.select :phone1_type,
+        options_for_select([['Cell', 'cell'],
+                            ['Home', 'home'],
+                            ['Work', 'work']],), prompt: 'Select Phone Type'
+    %p
+      = f.label :phone2
+      = f.telephone_field :phone2
+    %p
+      = f.label :phone2_type
+      = f.select :phone2_type,
+        options_for_select([['Cell', 'cell'],
+                            ['Home', 'home'],
+                            ['Work', 'work']],), prompt: 'Select Phone Type'
+    %p
+      = f.submit
