@@ -35,6 +35,5 @@ feature 'Manage Users' do
     expect(page).to have_content 'Logged in as: Sue Smith'
     click_on 'Logout'
     expect(page).to_not have_content 'Logged in as: Sue Smith'
-    expect(page).to have_content 'Logged Out!'
   end
 end
