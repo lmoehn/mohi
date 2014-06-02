@@ -24,4 +24,17 @@ feature 'Manage Users' do
     click_on 'Delete'
     expect(page).to_not have_content 'justbob@gmail.com'
   end
+
+  scenario 'a user can login' do
+    create_user
+    visit root_url
+    click_link 'Login'
+    fill_in 'user_name', with: 'smiths'
+    fill_in 'password', with: 'password1'
+    click_button 'Login'
+    expect(page).to have_content 'Logged in as: Sue Smith'
+    click_on 'Logout'
+    expect(page).to_not have_content 'Logged in as: Sue Smith'
+    expect(page).to have_content 'Logged Out!'
+  end
 end

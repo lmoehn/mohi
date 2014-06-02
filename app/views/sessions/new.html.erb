@@ -1,0 +1,14 @@
+<fieldset>
+  <h3>User Login</h3>
+<br>
+  <%= form_tag sessions_path do %>
+
+    <%= label_tag :user_name %>
+    <%= text_field_tag :user_name %>
+
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+
+    <%= submit_tag 'Login' %>
+  <% end %>
+</fieldset>

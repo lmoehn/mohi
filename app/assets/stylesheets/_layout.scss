@@ -11,12 +11,24 @@ body {
 header {
   background-color: black;
   overflow: hidden;
-  box-shadow: 0 0 6px 3px #006600;
+  box-shadow: 0 0 6px 3px #00CC00;
   h1 {
     display: block;
     float: left;
-    margin: .5em;
+    margin: 1.25em;
     color: #FFCC00;
+  }
+}
+
+.login_container {
+  float: right;
+  padding: .5em;
+  margin: 2em;
+  font-size: 1.5em;
+  color: #FFCC00;
+  .login_button {
+    @include button(#FFCC00);
+    color: #00CC00;
   }
 }
 
@@ -37,7 +49,7 @@ main {
 
 footer {
   height: 4em;
-//  position: absolute;
+  //  position: absolute;
   bottom: 0;
   width: 100%;
   padding: 0 .5em;

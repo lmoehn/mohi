@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(allowed_parameters)
     if @user.save
+      #session[user_id] = @user.id
       redirect_to User, notice: 'User added successfully'
     else
       render :new
