@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* PDF/Print style */
+    @page {
+      size: US-Letter portrait;
+    }
+
+    /* General */
+    html, body {
+      min-height: 100%;
+    }
+
+    body {
+      color: #333;
+      font-family: arial, sans-serif;
+      line-height: 1.2em;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    h2 {
+      color: #255697;
+      font-family: arial, sans-serif;
+      font-size: 1.2em;
+      line-height: 1.2em;
+      margin-bottom: 0.1em;
+    }
+
+    p {
+      font-size: .8em;
+      margin-bottom: 0.8em;
+    }
+
+    input {
+      font-size: 1em;
+      line-height: 1.8em;
+      text-align: center;
+      width: 280px;
+      background-color: #CCFFCC;
+      border: none;
+    }
+
+    /* Pages */
+    .page {
+      width: 600px;
+      min-height: 600px;
+      margin: 0 auto;
+      /*page-break-after: always;*/
+      border: 1px solid white; /* wkhtmltopdf hack */
+    }
+
+    .approve-button, #pdf-link {
+      background-color: #FF0066;
+      height: 40px;
+      color: #FFFFFF;
+      margin: auto;
+      display: block;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <%= yield %>
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<header>
+  <h2>Boulder Valley School District</h2>
+
+  <h2>Student Travel</h2>
+
+  <h2>Field Trip Permission Form</h2>
+</header>
+<br>
+I hereby permit&nbsp;&nbsp;
+<%= text_field_tag :player_name, params[:player_name], placeholder: "Enter Player's Full Name", readonly: @readonly %>
+&nbsp;&nbsp; (student) to participate in:
+<br>
+
+<p style="font-size:1em">
+  <strong>Colorado High School League Ultimate Frisbee games & tournaments</strong> for
+</p>
+
+<p style="font-size:1em">
+  <strong>Spring season: Mar-Jun 2014 and Fall season: Sep-Nov 2014</strong>
+</p>
+
+<p>S/He will be transported by:</p>
+<table style="font-size:.8em">
+  <tr>
+    <td>_______</td>
+    <td>School Bus</td>
+  </tr>
+  <tr>
+    <td>___X___</td>
+    <td>Private Car</td>
+  </tr>
+  <tr>
+    <td>_______</td>
+    <td>Walking</td>
+  </tr>
+  <tr>
+    <td>_______</td>
+    <td>Transportation is the responsibility of the parent</td>
+  </tr>
+  <tr>
+    <td>_______</td>
+    <td>Other</td>
+  </tr>
+</table>
+</br>
+<p>
+  I understand that the Activity may take place way from school property;
+  may involve transportation by school bus, private vehicle,
+  common carrier or other mode of transportation; and may involve
+  activities beyond the scope of traditional school functions
+  conducted on School District property.
+</p>
+
+<p>
+  I understand that the Activity may involve activities beyond the scope of traditional school functions. I
+  acknowledge that my student's participation in the activities potentially involves risks and obligations that are
+  impossible to predict, may include the risk of loss or damage to personal property and the risk of sickness,
+  personal injury or death.
+</p>
+
+<p>
+  I understand that the School District does not purchase, or have any medical, dental or hospitalization insurance
+  to cover injuries to or loss of life of students or to indemnify parents and guardians for expenses in connection
+  therewith, and that such insurance, if desired, must be purchased by me.
+</p>
+<br>
+
+<div class="date-wrapper" style="float:right">
+  <%= text_field_tag :approve_date, params[:approve_date], value: "#{Time.now.strftime('%B %d, %Y')}", readonly: @readlonly %>
+  <br>
+
+  <p>Date</p>
+</div>
+
+<div class="parent-wrapper" style="float:left">
+  <%= text_field_tag :parent_name, params[:parent_name], placeholder: "Enter Parent's Full Name", readonly: @readlonly %>
+  <p>Signature of Parent or Guardian</p>
+</div>

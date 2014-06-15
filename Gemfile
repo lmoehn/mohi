@@ -16,6 +16,9 @@ gem 'bourbon', '~> 3.2.1'
 gem 'neat', '~> 1.5.1'
 gem 'bitters', '~> 0.9.5'
 gem 'haml', '~> 4.0.5'
+gem 'pdfkit', '~> 0.6.2'
+gem 'carrierwave', '~> 0.10.0'
+gem 'fog', '~> 1.22.1'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.2'
@@ -26,4 +29,3 @@ end
 group :production do
   gem 'rails_12factor', '~> 0.0.2'
 end
-
