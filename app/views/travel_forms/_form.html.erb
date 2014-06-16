@@ -7,7 +7,7 @@
 </header>
 <br>
 I hereby permit&nbsp;&nbsp;
-<%= text_field_tag :player_name, params[:player_name], placeholder: "Enter Player's Full Name", readonly: @readonly %>
+<%= text_field_tag :player_name, params[:player_name], placeholder: "Enter Player's Full Name", readonly: @readonly, required: true %>
 &nbsp;&nbsp; (student) to participate in:
 <br>
 
@@ -44,7 +44,7 @@ I hereby permit&nbsp;&nbsp;
 </table>
 </br>
 <p>
-  I understand that the Activity may take place way from school property;
+  I understand that the Activity may take place away from school property;
   may involve transportation by school bus, private vehicle,
   common carrier or other mode of transportation; and may involve
   activities beyond the scope of traditional school functions
@@ -52,10 +52,10 @@ I hereby permit&nbsp;&nbsp;
 </p>
 
 <p>
-  I understand that the Activity may involve activities beyond the scope of traditional school functions. I
-  acknowledge that my student's participation in the activities potentially involves risks and obligations that are
-  impossible to predict, may include the risk of loss or damage to personal property and the risk of sickness,
-  personal injury or death.
+  I understand that the Activity may involve activities beyond the scope of traditional school
+  functions. I acknowledge that my student's participation in the activities potentially involves
+  risks and obligations that are impossible to predict, may include the risk of loss or damage
+  to personal property and the risk of sickness, personal injury or death.
 </p>
 
 <p>
@@ -65,14 +65,17 @@ I hereby permit&nbsp;&nbsp;
 </p>
 <br>
 
+<div class="parent-wrapper" style="float:left">
+  <%= text_field_tag :parent_name, params[:parent_name], placeholder: "Enter Parent's Full Name", readonly: @readlonly, required: true %>
+  <p>Signature of Parent or Guardian</p>
+</div>
+
 <div class="date-wrapper" style="float:right">
-  <%= text_field_tag :approve_date, params[:approve_date], value: "#{Time.now.strftime('%B %d, %Y')}", readonly: @readlonly %>
+  <%= text_field_tag :approve_date,
+                     (params[:approve_date] or "#{Time.now.strftime('%B %d, %Y')}"),
+                     placeholder: "#{Time.now.strftime('%B %d, %Y')}",
+                     readonly: @readlonly, required: true %>
   <br>
 
   <p>Date</p>
-</div>
-
-<div class="parent-wrapper" style="float:left">
-  <%= text_field_tag :parent_name, params[:parent_name], placeholder: "Enter Parent's Full Name", readonly: @readlonly %>
-  <p>Signature of Parent or Guardian</p>
 </div>
