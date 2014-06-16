@@ -59,13 +59,30 @@
       border: 1px solid white; /* wkhtmltopdf hack */
     }
 
-    .approve-button, #pdf-link {
+    .approve-button {
       background-color: #FF0066;
       height: 40px;
       color: #FFFFFF;
       margin: auto;
       display: block;
       font-size: 1em;
+    }
+
+    @media print {
+      body {
+        background-color: #FFF;
+      }
+
+      .page {
+        width: auto;
+        margin: 40px;
+        padding: 20px;
+        border: none;
+      }
+
+      #pdf-link {
+        display: none;
+      }
     }
   </style>
 </head>
