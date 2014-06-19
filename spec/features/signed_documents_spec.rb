@@ -11,7 +11,6 @@ feature 'manage signed documents' do
       click_on 'Approve'
     end
     expect(page).to have_no_content 'Approve'
-    expect(page).to have_content 'View PDF'
     expect(page).to have_content 'Player Doe'
     expect(page).to have_content 'Parent Doe'
     expect(page).to have_content 'May 6, 2008'

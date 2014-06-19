@@ -19,6 +19,7 @@ gem 'haml', '~> 4.0.5'
 gem 'pdfkit', '~> 0.6.2'
 gem 'carrierwave', '~> 0.10.0'
 gem 'fog', '~> 1.22.1'
+gem 'american_date'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.2'

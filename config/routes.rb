@@ -6,6 +6,5 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions
-  resources :travel_forms
   resources :signed_documents
 end

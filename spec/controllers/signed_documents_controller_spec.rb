@@ -7,7 +7,7 @@ describe SignedDocumentsController do
     it "generates a PDF and redirects to the show page" do
       expect do
         quietly do
-          post :create, signed_document: {player_name: "Joe", approved_on: "05/06/2008"}
+          post :create, signed_document: {player_name: "Joe", approved_on: "2014-06-19"}
         end
       end.to change { SignedDocument.count }.by(1)
 

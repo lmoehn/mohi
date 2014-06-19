@@ -11,12 +11,10 @@ class SignedDocumentsController < ApplicationController
   end
 
   def create
-    @player_name_no_whitespace = params["signed_document"]["player_name"].gsub(/\s+/, "")
-
     @signed_document = SignedDocument.new(
         player_name: params[:signed_document][:player_name],
         parent_name: params[:signed_document][:parent_name],
-        approved_on: Date.strptime(params[:signed_document][:approved_on], '%m/%d/%Y'),
+        approved_on: params[:signed_document][:approved_on],
     )
 
     html = render_to_string(action: "show")

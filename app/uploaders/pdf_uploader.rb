@@ -8,8 +8,8 @@ class PdfUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def extension_whiteb_list
-     #%w(pdf)
+  def extension_white_list
+     %w(pdf)
   end
 
   # Override the filename of the uploaded files:
