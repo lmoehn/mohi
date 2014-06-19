@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531032823) do
+ActiveRecord::Schema.define(version: 20140619155955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "signed_documents", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "template_id"
+    t.boolean  "active",      default: true
+    t.string   "attachment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "player_name"
+    t.string   "parent_name"
+    t.date     "approved_on"
+  end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
