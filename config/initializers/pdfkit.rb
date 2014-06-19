@@ -6,7 +6,7 @@ PDFKit.configure do |config|
     config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltox-0.12.1', 'bin', 'wkhtmltopdf').to_s
   else
     #if your site is hosted on heroku or any other hosting server which is 64bit
-    config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltopdf-amd64').to_s
+    config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltox-0.12.1', 'bin', 'wkhtmltopdf').to_s
   end
 
   config.default_options = {
