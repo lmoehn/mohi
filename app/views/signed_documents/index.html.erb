@@ -15,7 +15,7 @@
   <tbody>
   <% @signed_documents.each do |signed_document| %>
     <tr>
-      <td><%= link_to signed_document.player_name, signed_document %></td>
+      <td><%= link_to signed_document.player_name, signed_document.attachment_url %></td>
       <td><%= signed_document.parent_name %></td>
       <td><%= signed_document.approved_on %></td>
     </tr>

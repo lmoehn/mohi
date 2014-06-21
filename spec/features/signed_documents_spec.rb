@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'manage signed documents' do
-  scenario 'add signed document information' do
+  scenario 'add signed document information, display it, view and print a pdf' do
     visit '/'
     click_on 'List of Signed Documents'
     click_on 'Add New Signed Document'
@@ -15,5 +15,11 @@ feature 'manage signed documents' do
     expect(page).to have_content 'Player Doe'
     expect(page).to have_content 'Parent Doe'
     expect(page).to have_content 'May 6, 2008'
+
+    click_on 'Home'
+    click_on 'List of Signed Documents'
+    click_on 'Player Doe'
+
+    expect(page).to have_content '%PDF-1.4 1 0 obj'
   end
 end
