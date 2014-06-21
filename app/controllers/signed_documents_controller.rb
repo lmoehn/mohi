@@ -1,5 +1,10 @@
 class SignedDocumentsController < ApplicationController
 
+  def index
+    @signed_documents = SignedDocument.all
+    render layout: "application"
+  end
+
   def show
     @signed_document = SignedDocument.find(params[:id])
   end

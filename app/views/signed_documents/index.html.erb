@@ -1,0 +1,24 @@
+<h1>Signed Documents Index</h1>
+
+<div class="actions">
+  <%= link_to 'Add New Signed Document', new_signed_document_path %>
+</div>
+
+<table class="table-borders">
+  <thead>
+  <tr>
+    <th>Player Name</th>
+    <th>Parent Name</th>
+    <th>Approved On</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @signed_documents.each do |signed_document| %>
+    <tr>
+      <td><%= link_to signed_document.player_name, signed_document %></td>
+      <td><%= signed_document.parent_name %></td>
+      <td><%= signed_document.approved_on %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
