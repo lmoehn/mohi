@@ -72,15 +72,15 @@
     <p>Signature of Parent or Guardian</p>
   </div>
 
-  <div class="date-wrapper" style="float:right">
-    <%= f.date_field :approved_on,
-                     placeholder: "#{Time.now.strftime('%B %d, %Y')}",
-                     required: true %>
-    <br>
+  <div style="float:right">
+    <div class="input-date">
+      <%= f.date_field :approved_on,
+                       placeholder: "#{Time.now.strftime('%B %d, %Y')}",
+                       required: true %>
+    </div>
 
     <p>Date</p>
   </div>
 
-  <%= submit_tag 'Approve', class: 'approve-button' %>
-
+  <%= submit_tag 'Approve', class: 'approved-button' %>
 <% end %>

@@ -11,7 +11,7 @@ body {
 header {
   background-color: black;
   overflow: hidden;
-  box-shadow: 0 0 6px 3px #00CC00;
+  box-shadow: 0 0 6px 3px $base-accent-color;
   h1 {
     display: block;
     float: left;
@@ -26,10 +26,7 @@ header {
   margin: 2em;
   font-size: 1.5em;
   color: #FFCC00;
-  .login_button {
-    @include button(#FFCC00);
-    color: #00CC00;
-  }
+  @include button(simple);
 }
 
 main {
@@ -47,22 +44,12 @@ main {
   }
 }
 
-footer {
-  height: 4em;
-  //  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 0 .5em;
-  background-image: url('grass.png');
-}
-
 fieldset {
   @include span-columns(7);
 }
 
 .actions {
   @include button;
-  color: white;
 }
 
 .table-borders {
@@ -91,6 +78,12 @@ fieldset {
       &:hover > td {
         background-color: $table-stripe-color-hover;
       }
+    }
+    a {
+      color: $base-accent-color;
+    }
+    a:hover {
+      color: darken($base-accent-color, 15);
     }
   }
 
