@@ -11,9 +11,21 @@ admin = User.new(
     last_name: 'Admin',
     user_name: 'adminiam',
     email: 'admin@admin.com',
-    password: 'password1',
+    password: 'password',
     user_type: 'coach',
     status: 'active',
     admin: true,
 )
 admin.save
+
+player = User.new(
+    first_name: 'Jill',
+    last_name: 'Hill',
+    user_name: 'hilljill',
+    email: 'jillhill@gmail.com',
+    password: 'password',
+    user_type: 'player',
+    status: 'active',
+    admin: false,
+)
+player.save

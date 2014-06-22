@@ -25,15 +25,14 @@ header {
   padding: .5em;
   margin: 2em;
   font-size: 1.5em;
-  color: #FFCC00;
-  @include button(simple);
+  @include button();
 }
 
 main {
   @include outer-container;
   margin: 0 auto;
 
-  #content-container {
+  #content {
     @include span-columns(9);
     float: left;
   }
@@ -45,11 +44,21 @@ main {
 }
 
 fieldset {
-  @include span-columns(7);
+  @include span-columns(8);
+}
+
+.phone {
+  width: 65%;
+  float: left;
+}
+
+.phone-type {
+  width: 30%;
+  float: right;
 }
 
 .actions {
-  @include button;
+  @include button();
 }
 
 .table-borders {

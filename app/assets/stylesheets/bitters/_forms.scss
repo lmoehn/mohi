@@ -71,8 +71,13 @@ input[type="file"] {
   width: 100%;
 }
 
+input[type="submit"] {
+  @include button();
+}
+
 select {
   width: auto;
   max-width: 100%;
   margin-bottom: $base-line-height;
+  height: $base-line-height * 1.5;
 }
