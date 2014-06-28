@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   delete 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :users
+  resources :users do
+    resources :players
+  end
   resources :sessions
   resources :signed_documents
 end

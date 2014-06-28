@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 feature 'Manage Users' do
+
+  before do
+    DatabaseCleaner.clean
+  end
+
   scenario 'a user can be added, edited and deleted' do
     visit '/'
     click_on 'List of Users'
@@ -11,6 +16,7 @@ feature 'Manage Users' do
     fill_in 'user[user_name]', with: 'smithb'
     fill_in 'user[email]', with: 'bobsmith@gmail.com'
     fill_in 'user[password]', with: 'password1'
+    select 'Player', :from => 'User type'
 
     click_on 'Create User'
     click_on 'Bob Smith'

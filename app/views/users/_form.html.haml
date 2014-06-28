@@ -1,7 +1,8 @@
 = render 'shared/messages', target: @user
 
-%fieldset
-  = form_for @user do |f|
+= form_for @user do |f|
+  %fieldset
+    %legend Contact Information
     %p
       = f.label :first_name
       = f.text_field :first_name
@@ -24,7 +25,7 @@
                             ['Player', 'player'],
                             ['Parent', 'parent'],
                             ['Coach', 'coach'],
-                            ['Other', 'other']],), prompt: 'Select User Type'
+                            ['Other', 'other']], @user.user_type), prompt: 'Select User Type'
     %p
       = f.label :group
       = f.text_field :group
@@ -41,7 +42,7 @@
         = f.select :phone1_type,
         options_for_select([['Cell', 'cell'],
                             ['Home', 'home'],
-                            ['Work', 'work']],), prompt: 'Phone Type'
+                            ['Work', 'work']], @user.phone1_type), prompt: 'Phone Type'
     %p
       = f.label :phone2
     %p
@@ -51,5 +52,14 @@
         = f.select :phone2_type,
           options_for_select([['Cell', 'cell'],
                               ['Home', 'home'],
-                              ['Work', 'work']],), prompt: 'Phone Type'
-      = f.submit
+                              ['Work', 'work']], @user.phone2_type), prompt: 'Phone Type'
+
+  - if ['player', 'prospect'].include? params[:user_type]
+    %fieldset
+      %legend Player Information
+      = f.fields_for :player do |ff|
+        = render params[:user_type].to_s, ff: ff
+
+  %fieldset
+    %legend Submit
+    = f.submit

@@ -10,13 +10,19 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.build_player
   end
 
   def create
     @user = User.new(allowed_parameters)
+    saved_user_type = @user.user_type
     if @user.save
       #session[user_id] = @user.id
-      redirect_to User, notice: 'User added successfully'
+      if saved_user_type != 'prospect'
+        redirect_to User
+      else
+        redirect_to root_path
+      end
     else
       render :new
     end
@@ -57,6 +63,23 @@ class UsersController < ApplicationController
         :status,
         :admin,
         :password,
+        player_attributes: [
+            :user_id,
+            :aka,
+            :gender,
+            :grad_year,
+            :rank,
+            :scholarship,
+            :usua_num,
+            :jersey_num,
+            :jersey_size,
+            :shorts_size,
+            :drivers_license,
+            :strive_status,
+            :medical_info,
+            :skills,
+            :notes,
+        ]
     )
   end
 end

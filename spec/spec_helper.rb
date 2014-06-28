@@ -41,3 +41,6 @@ RSpec.configure do |config|
   config.order = "random"
   config.include ObjectCreationMethods
 end
+
+require 'database_cleaner'
+DatabaseCleaner.strategy = :truncation

@@ -23,8 +23,12 @@ gem 'american_date'
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.2'
-  gem 'capybara', '~> 2.2.1'
   gem 'launchy', '~> 2.4.2'
+end
+
+group :test do
+  gem 'capybara', '~> 2.2.1'
+  gem 'database_cleaner', '~> 1.3.0'
 end
 
 group :production do
