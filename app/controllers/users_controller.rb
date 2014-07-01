@@ -17,10 +17,12 @@ class UsersController < ApplicationController
     @user = User.new(allowed_parameters)
     saved_user_type = @user.user_type
     if @user.save
-      #session[user_id] = @user.id
       if saved_user_type != 'prospect'
+        #session[user_id] = @user.id
         redirect_to User
       else
+        UserMailer.new_prospect(@user).deliver
+        UserMailer.new_prospect_coach(@user).deliver
         redirect_to root_path
       end
     else

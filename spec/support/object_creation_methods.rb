@@ -31,10 +31,10 @@ module ObjectCreationMethods
         status: 'active',
         phone1: '303-555-5555',
         phone1_type: 'cell',
-        phone2: '720-555-5555',
-        phone2_type: 'home',
     }
-    User.new(defaults.merge(attributes))
+    user = User.new(defaults.merge(attributes))
+    user.build_player(aka: 'jj', gender: 'female')
+    user
   end
 
   def create_user(attributes = {})
