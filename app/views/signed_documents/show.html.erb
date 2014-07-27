@@ -9,9 +9,10 @@
 
   <h2>Field Trip Permission Form</h2>
 </header>
+<%= debugger %>
 <br>
 I hereby permit&nbsp;&nbsp;
-<%= @signed_document.player_name %>
+<%= @signed_document.properties['player_name'] %>
 &nbsp;&nbsp; (student) to participate in:
 <br>
 
@@ -70,12 +71,12 @@ I hereby permit&nbsp;&nbsp;
 <br>
 
 <div class="parent-wrapper" style="float:left">
-  <%= @signed_document.parent_name %>
+  <%= @signed_document.properties['parent_name'] %>
   <p>Signature of Parent or Guardian</p>
 </div>
 
 <div class="date-wrapper" style="float:right">
-  <%= @signed_document.approved_on.strftime('%B %-d, %Y') %>
+  <%= Date.parse(@signed_document.properties['approved_on']).strftime('%B %-d, %Y') %>
   <br>
 
   <p>Date</p>

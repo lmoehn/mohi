@@ -7,6 +7,7 @@
 
     <h2>Field Trip Permission Form</h2>
   </header>
+
   <br>
   I hereby permit&nbsp;&nbsp;
   <%= f.text_field :player_name, placeholder: "Enter Player's Full Name", required: true %>
@@ -68,7 +69,7 @@
   <br>
 
   <div class="parent-wrapper" style="float:left">
-    <%= f.text_field :parent_name, placeholder: "Enter Parent's Full Name", required: true %>
+    <%= f.text_field :parent_name, placeholder: "Enter Parent's Full Name", required: true, autofocus: true %>
     <p>Signature of Parent or Guardian</p>
   </div>
 

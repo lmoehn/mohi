@@ -15,7 +15,6 @@ feature 'manage signed documents' do
     expect(page).to have_content 'Player Doe'
     expect(page).to have_content 'Parent Doe'
     expect(page).to have_content 'May 6, 2008'
-
     click_on 'Home'
     click_on 'List of Signed Documents'
     click_on 'Player Doe'

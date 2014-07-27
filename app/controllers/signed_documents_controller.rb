@@ -16,11 +16,11 @@ class SignedDocumentsController < ApplicationController
   end
 
   def create
-    @signed_document = SignedDocument.new(
+    @signed_document = SignedDocument.new(properties: {
         player_name: params[:signed_document][:player_name],
         parent_name: params[:signed_document][:parent_name],
         approved_on: params[:signed_document][:approved_on],
-    )
+    })
 
     html = render_to_string(action: "show")
     kit = PDFKit.new(html, page_size: "Letter")
@@ -28,7 +28,6 @@ class SignedDocumentsController < ApplicationController
     file = Tempfile.new(['signed_document', '.pdf'], encoding: 'ASCII-8BIT')
     file.rewind
     file.write pdf
-
     @signed_document.attachment = file
     @signed_document.save!
     redirect_to signed_document_path(@signed_document)
