@@ -1,0 +1,95 @@
+<header>
+  <h2>Boulder Valley School District</h2>
+
+  <h2>Student Travel</h2>
+
+  <h2>Field Trip Permission Form</h2>
+</header>
+
+<br>
+I hereby permit&nbsp;&nbsp;
+<% if controller.action_name == 'new' %>
+  <%= f.text_field :player_name, placeholder: "Enter Player's Full Name", required: true %>
+<% else %>
+  <%= @signed_document.properties['player_name'] %>
+<% end %>
+&nbsp;&nbsp; (student) to participate in:
+<br>
+
+<p style="font-size:1em">
+  <strong>Colorado High School League Ultimate Frisbee games & tournaments</strong> for
+</p>
+
+<p style="font-size:1em">
+  <strong>Spring season: Mar-Jun 2014 and Fall season: Sep-Nov 2014</strong>
+</p>
+
+<p>S/He will be transported by:</p>
+<table style="font-size:.8em">
+  <tr>
+    <td>_______</td>
+    <td>School Bus</td>
+  </tr>
+  <tr>
+    <td>___X___</td>
+    <td>Private Car</td>
+  </tr>
+  <tr>
+    <td>_______</td>
+    <td>Walking</td>
+  </tr>
+  <tr>
+    <td>_______</td>
+    <td>Transportation is the responsibility of the parent</td>
+  </tr>
+  <tr>
+    <td>_______</td>
+    <td>Other</td>
+  </tr>
+</table>
+</br>
+<p>
+  I understand that the Activity may take place away from school property;
+  may involve transportation by school bus, private vehicle,
+  common carrier or other mode of transportation; and may involve
+  activities beyond the scope of traditional school functions
+  conducted on School District property.
+</p>
+
+<p>
+  I understand that the Activity may involve activities beyond the scope of traditional school
+  functions. I acknowledge that my student's participation in the activities potentially involves
+  risks and obligations that are impossible to predict, may include the risk of loss or damage
+  to personal property and the risk of sickness, personal injury or death.
+</p>
+
+<p>
+  I understand that the School District does not purchase, or have any medical, dental or hospitalization insurance
+  to cover injuries to or loss of life of students or to indemnify parents and guardians for expenses in connection
+  therewith, and that such insurance, if desired, must be purchased by me.
+</p>
+<br>
+
+<div class="parent-wrapper" style="float:left">
+
+  <% if controller.action_name == 'new' %>
+    <%= f.text_field :parent_name, placeholder: "Enter Parent's Full Name", required: true, autofocus: true %>
+  <% else %>
+    <%= @signed_document.properties['parent_name'] %>
+  <% end %>
+  <p>Signature of Parent or Guardian</p>
+</div>
+
+<div style="float:right">
+  <div class="input-date">
+    <% if controller.action_name == 'new' %>
+      <%= f.date_field :approved_on,
+                       placeholder: "#{Time.now.strftime('%B %d, %Y')}",
+                       required: true %>
+    <% else %>
+      <%= Date.parse(@signed_document.properties['approved_on']).strftime('%B %-d, %Y') %>
+    <% end %>
+  </div>
+
+  <p>Date</p>
+</div>
