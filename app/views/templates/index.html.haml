@@ -1,0 +1,20 @@
+%h3 Show Templates
+.actions= link_to 'Create a Template', new_template_path
+
+%table.table-borders
+  %thead
+    %tr
+      %th Name
+      %th Version
+      %th Year
+      %th New Partial
+      %th Show Partial
+  %tbody
+
+  - @templates.each do |template|
+    %tr
+      %td= link_to template.name, template_path(template)
+      %td= template.version
+      %td= template.year
+      %td= template.new_partial
+      %td= template.show_partial

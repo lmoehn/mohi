@@ -1,0 +1,22 @@
+= render 'shared/messages', target: @template
+
+= form_for @template do |f|
+  %fieldset
+    %legend Template Information
+    %p
+      = f.label :name
+      = f.text_field :name
+    %p
+      = f.label :version
+      = f.text_field :version
+    %p
+      = f.label :year
+      = f.text_field :year
+    %p
+      = f.label :new_partial
+      = f.text_field :new_partial
+    %p
+      = f.label :show_partial
+      = f.text_field :show_partial
+    %p
+      = f.submit

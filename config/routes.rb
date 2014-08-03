@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   resources :sessions
   resources :signed_documents
+  resources :templates
 end

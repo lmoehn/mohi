@@ -150,3 +150,22 @@ fieldset {
     }
   }
 }
+
+.table-vertical {
+  tbody {
+    @include span-columns(5);
+    $table-border-color: $base-border-color;
+    $table-background: lighten($table-border-color, 10);
+    $table-padding: 0.5em;
+    background-color: $table-background;
+    th {
+      width: 45%;
+      text-align: right;
+    }
+
+    td, th {
+      padding: $table-padding;
+      border: none;
+    }
+  }
+}
