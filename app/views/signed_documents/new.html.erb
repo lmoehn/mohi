@@ -1,6 +1,6 @@
 <%= form_for @signed_document do |f| %>
-
-  <%= render partial: 'templates/bvsd_travel', locals: {f: f} %>
+  <%= f.hidden_field :pdf_template_id %>
+  <%= f.hidden_field :user_id %>
+  <%= render partial: "pdf_templates/#{@signed_document.pdf_template.new_partial}", locals: {f: f} %>
   <%= submit_tag 'Approve', class: 'approved-button' %>
-
 <% end %>

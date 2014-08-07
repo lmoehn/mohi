@@ -1,5 +1,5 @@
 %h3 Show Templates
-.actions= link_to 'Create a Template', new_template_path
+.actions= link_to 'Create a Template', new_pdf_template_path
 
 %table.table-borders
   %thead
@@ -9,12 +9,14 @@
       %th Year
       %th New Partial
       %th Show Partial
+      %th Active
   %tbody
 
-  - @templates.each do |template|
+  - @pdf_templates.each do |template|
     %tr
-      %td= link_to template.name, template_path(template)
+      %td= link_to template.name, pdf_template_path(template)
       %td= template.version
       %td= template.year
       %td= template.new_partial
       %td= template.show_partial
+      %td= template.active

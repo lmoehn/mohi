@@ -59,7 +59,6 @@ class UsersController < ApplicationController
         :phone1_type,
         :phone2,
         :phone2_type,
-        :group,
         :user_type,
         :user_name,
         :status,

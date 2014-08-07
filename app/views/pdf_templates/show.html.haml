@@ -1,0 +1,30 @@
+%h3 Template Information
+
+.actions= link_to "Edit", edit_pdf_template_path(@pdf_template)
+
+.actions= link_to "Delete", pdf_template_path(@pdf_template), method: :delete, data: {confirm: "Are you sure?"}
+
+%table.table-vertical
+  %tbody
+    %tr
+      %th Name
+      %td= @pdf_template.name
+
+    %tr
+      %th Version
+      %td= @pdf_template.version
+
+    %tr
+      %th Year
+      %td= @pdf_template.year
+
+    %tr
+      %th New Partial
+      %td= @pdf_template.new_partial
+
+    %tr
+      %th Show Partial
+      %td= @pdf_template.show_partial
+    %tr
+      %th Active
+      %td= @pdf_template.active

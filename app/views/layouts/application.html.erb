@@ -5,8 +5,8 @@
 
   <link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -31,7 +31,7 @@
       <li><%= link_to "Learn More", new_user_path(user_type: 'prospect') %></li>
       <li><%= link_to "List of Users", users_path %></li>
       <li><%= link_to "List of Signed Documents", signed_documents_path %></li>
-      <li><%= link_to "Show Templates", templates_path %></li>
+      <li><%= link_to "Show Templates", pdf_templates_path %></li>
       <li><%= link_to "MOHI Facebook", 'http://www.facebook.com/groups/monarchultimate' %></li>
       <li><%= link_to "USUA website", 'http://www.usaultimate.org/index.html' %></li>
     </ul>

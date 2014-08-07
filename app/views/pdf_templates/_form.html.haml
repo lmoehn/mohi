@@ -1,6 +1,6 @@
-= render 'shared/messages', target: @template
+= render 'shared/messages', target: @pdf_template
 
-= form_for @template do |f|
+= form_for @pdf_template do |f|
   %fieldset
     %legend Template Information
     %p
@@ -14,9 +14,12 @@
       = f.text_field :year
     %p
       = f.label :new_partial
-      = f.text_field :new_partial
+      = f.collection_select :new_partial, available_partials, :to_s, :to_s
     %p
       = f.label :show_partial
-      = f.text_field :show_partial
+      = f.collection_select :show_partial, available_partials, :to_s, :to_s
+    %p
+      = f.label :active
+      = f.check_box :active
     %p
       = f.submit

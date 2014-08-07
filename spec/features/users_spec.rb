@@ -57,14 +57,14 @@ feature 'Manage Users' do
   end
 
   scenario 'a user can login' do
-    create_user
+    create_player
     visit root_url
     click_link 'Login'
-    fill_in 'user_name', with: 'smiths'
-    fill_in 'password', with: 'password1'
+    fill_in 'user_name', with: 'janeplayer'
+    fill_in 'password', with: 'password'
     click_button 'Login'
-    expect(page).to have_content 'Logged in as: Sue Smith'
+    expect(page).to have_content 'Logged in as: Jane Player'
     click_on 'Logout'
-    expect(page).to_not have_content 'Logged in as: Sue Smith'
+    expect(page).to_not have_content 'Logged in as: Jane Player'
   end
 end

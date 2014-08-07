@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resources :players
   end
   resources :sessions
+  resources :pdf_templates
   resources :signed_documents
-  resources :templates
 end

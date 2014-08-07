@@ -1,4 +1,4 @@
 <div id="pdf-link">
   <%= link_to 'Home', root_path %>
-  <%= render partial: 'templates/bvsd_travel' %>
+  <%= render partial: "pdf_templates/#{@signed_document.pdf_template.show_partial}" %>
 </div>

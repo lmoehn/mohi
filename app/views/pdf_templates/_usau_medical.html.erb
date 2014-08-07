@@ -1,0 +1,157 @@
+<header>
+  <div>
+    <h2>USA Ultimate</h2>
+  </div>
+
+  <br>
+
+  <div>
+    <h2>Medical Authorization Form</h2>
+  </div>
+
+</header>
+
+<br>
+
+<p>
+  Purpose: To enable parents or guardians to authorize the provision
+  of emergency treatment for their children who are injured or become ill
+  while under the authority of <strong>Monarch High School coaches</strong>
+  in the event the parents or guardians cannot be reached.
+</p>
+
+<p>
+  This acknowledges that we, the undersigned, parents(s) or legal guardians(s) of
+</p>
+
+<div style="float:left">
+  <% if controller.action_name == 'new' %>
+    <%= f.text_field :player_name,
+                     placeholder: "Enter Player's Full Name",
+                     required: true,
+                     autofocus: true %>
+  <% else %>
+    <%= @signed_document.properties['player_name'] %>
+  <% end %>
+  <p>Player Name</p>
+</div>
+
+<div style="float:right">
+  <% if controller.action_name == 'new' %>
+    <%= f.date_field :player_birth_date,
+                     placeholder: "Enter Player's Birth Date",
+                     required: true,
+                     value: @signed_document.properties['player_birth_date'] %>
+  <% else %>
+    <%= Date.parse(@signed_document.properties['player_birth_date']).strftime('%B %-d, %Y') %>
+  <% end %>
+  <p>Player Birth Date</p>
+</div>
+
+<br>
+
+<p>
+  recognize the potentially hazardous nature of the sport of ULTIMATE
+  that an injury might be sustained. These injuries include but are not
+  limited to PERMANENT DISABILITY, BLINDNESS, PARALYSIS AND DEATH.
+  In the event of such an injury to my child and we (I, or my spouse or
+  guardian) cannot be contacted, we give permission to qualified and
+  licensed EMTs, physicians, paramedics, and/or other medical or hospital
+  personnel to render such treatment.
+</p>
+
+<p>
+  We (I) release USA Ultimate, its employees, its agents, its volunteers
+  and its assigns from any personal injuries caused by or having any relation
+  to this activity. We (I) understand that this release applies to any present
+  or future injuries or illnesses and that it binds my heirs, executors and administrators.
+
+  This release form is completed and signed of my own free will
+  and with full knowledge of its significance. I have read and understand
+  all of its terms.
+
+</p>
+
+<br>
+
+<p>
+  I understand that the School District does not purchase, or have any medical, dental
+  or hospitalization insurance to cover injuries to or loss of life of students or to
+  indemnify parents and guardians for expenses in connection therewith, and that such
+  insurance, if desired, must be purchased by me.
+</p>
+
+<br>
+
+<div class="parent-wrapper" style="float:left">
+
+  <% if controller.action_name == 'new' %>
+    <%= f.text_field :parent_name1,
+                     placeholder: "Parent or Guardian Name",
+                     required: true,
+                     value: @signed_document.properties['parent_name1'] %>
+  <% else %>
+    <%= @signed_document.properties['parent_name1'] %>
+  <% end %>
+  <p>Printed Name of Parent or Guardian</p>
+
+  <% if controller.action_name == 'new' %>
+    <%= f.telephone_field :phone1,
+                          placeholder: "Phone",
+                          required: true,
+                          value: @signed_document.properties['parent_name1'] %>
+  <% else %>
+    <%= @signed_document.properties['phone1'] %>
+  <% end %>
+  <p>Phone</p>
+
+</div>
+
+<div class="parent-wrapper" style="float:right">
+
+  <% if controller.action_name == 'new' %>
+    <%= f.text_field :parent_name2,
+                     placeholder: "Parent or Guardian Name",
+                     value: @signed_document.properties['parent_name2'] %>
+  <% else %>
+    <%= @signed_document.properties['parent_name2'] %>
+  <% end %>
+  <p>Printed Name of Parent or Guardian</p>
+
+  <% if controller.action_name == 'new' %>
+    <%= f.telephone_field :phone2,
+                          placeholder: "Phone",
+                          value: @signed_document.properties['phone2'] %>
+  <% else %>
+    <%= @signed_document.properties['phone2'] %>
+  <% end %>
+  <p>Phone</p>
+
+</div>
+
+<div style="float:left">
+  <div class="input-date">
+    <% if controller.action_name == 'new' %>
+      <%= f.date_field :approved_on,
+                       placeholder: "#{Time.now.strftime('%B %d, %Y')}",
+                       required: true,
+                       value: @signed_document.properties['approved_on'] %>
+    <% else %>
+      <%= Date.parse(@signed_document.properties['approved_on']).strftime('%B %-d, %Y') %>
+    <% end %>
+  </div>
+  <p>Date</p>
+</div>
+
+<div style="float:right">
+
+  <% if controller.action_name == 'new' %>
+    <%= f.text_field :family_physician,
+                     placeholder: "Family Physician",
+                     value: @signed_document.properties['family_physician'] %>
+  <% else %>
+    <%= @signed_document.properties['family_physician'] %>
+  <% end %>
+  <p>Family Physician</p>
+
+</div>

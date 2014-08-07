@@ -9,7 +9,10 @@
 <br>
 I hereby permit&nbsp;&nbsp;
 <% if controller.action_name == 'new' %>
-  <%= f.text_field :player_name, placeholder: "Enter Player's Full Name", required: true %>
+  <%= f.text_field :player_name,
+                   placeholder: "Enter Player's Full Name",
+                   autofocus: true,
+                   required: true %>
 <% else %>
   <%= @signed_document.properties['player_name'] %>
 <% end %>
@@ -73,15 +76,17 @@ I hereby permit&nbsp;&nbsp;
 <div class="parent-wrapper" style="float:left">
 
   <% if controller.action_name == 'new' %>
-    <%= f.text_field :parent_name, placeholder: "Enter Parent's Full Name", required: true, autofocus: true %>
+    <%= f.text_field :parent_name, placeholder: "Enter Parent's Full Name", required: true %>
   <% else %>
     <%= @signed_document.properties['parent_name'] %>
   <% end %>
   <p>Signature of Parent or Guardian</p>
+
 </div>
 
 <div style="float:right">
   <div class="input-date">
+
     <% if controller.action_name == 'new' %>
       <%= f.date_field :approved_on,
                        placeholder: "#{Time.now.strftime('%B %d, %Y')}",
@@ -90,6 +95,5 @@ I hereby permit&nbsp;&nbsp;
       <%= Date.parse(@signed_document.properties['approved_on']).strftime('%B %-d, %Y') %>
     <% end %>
   </div>
-
   <p>Date</p>
 </div>

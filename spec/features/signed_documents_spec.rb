@@ -1,10 +1,13 @@
 require 'spec_helper'
 
 feature 'manage signed documents' do
-  scenario 'add signed document information, display it, view and print a pdf' do
+  scenario 'add a signed BVSD Travel Form, display it, view and print a pdf' do
+    create_player
+    create_pdf_template
+
     visit '/'
     click_on 'List of Signed Documents'
-    click_on 'Add New Signed Document'
+    click_on 'BVSD Travel'
     fill_in 'signed_document_player_name', with: 'Player Doe'
     fill_in 'signed_document_parent_name', with: 'Parent Doe'
     fill_in 'signed_document_approved_on', with: '05/06/2008'
@@ -17,8 +20,8 @@ feature 'manage signed documents' do
     expect(page).to have_content 'May 6, 2008'
     click_on 'Home'
     click_on 'List of Signed Documents'
-    click_on 'Player Doe'
 
-    expect(page).to have_content '%PDF-1.4 1 0 obj'
+    expect(page).to have_content 'Created on: '
   end
+
 end

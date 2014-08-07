@@ -9,5 +9,17 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  helper_method :current_user
+  def admin_user
+    @admin_user = User.where(admin: true)
+  end
+
+  def parent_user
+    @parent_user = User.where(user_type: "parent")
+  end
+
+  def player_user
+    @player_user = User.where(user_type: "player")
+  end
+
+  helper_method :current_user, :admin_user, :parent_user, :player_user
 end

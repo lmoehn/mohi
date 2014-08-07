@@ -8,7 +8,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :phone1_type
       t.string :phone2
       t.string :phone2_type
-      t.string :group
       t.string :user_type
       t.string :user_name
       t.string :password_digest

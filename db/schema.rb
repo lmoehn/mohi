@@ -17,6 +17,17 @@ ActiveRecord::Schema.define(version: 20140802175933) do
   enable_extension "plpgsql"
   enable_extension "hstore"
 
+  create_table "pdf_templates", force: true do |t|
+    t.string   "name",                        null: false
+    t.string   "version"
+    t.integer  "year"
+    t.string   "new_partial",                 null: false
+    t.string   "show_partial",                null: false
+    t.boolean  "active",       default: true, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "players", force: true do |t|
     t.integer  "user_id"
     t.string   "aka"
@@ -38,27 +49,16 @@ ActiveRecord::Schema.define(version: 20140802175933) do
   end
 
   create_table "signed_documents", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "template_id"
-    t.boolean  "active",      default: true
+    t.integer  "user_id",                        null: false
+    t.integer  "pdf_template_id",                null: false
+    t.boolean  "active",          default: true
     t.string   "attachment"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "player_name"
-    t.string   "parent_name"
-    t.date     "approved_on"
-    t.hstore   "properties"
+    t.hstore   "properties",                     null: false
   end
 
-  create_table "templates", force: true do |t|
-    t.string   "name"
-    t.string   "version"
-    t.integer  "year"
-    t.string   "new_partial"
-    t.string   "show_partial"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "signed_documents", ["user_id", "pdf_template_id"], name: "index_signed_documents_on_user_id_and_pdf_template_id", unique: true, using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 20140802175933) do
     t.string   "phone1_type"
     t.string   "phone2"
     t.string   "phone2_type"
-    t.string   "group"
     t.string   "user_type"
     t.string   "user_name"
     t.string   "password_digest"
